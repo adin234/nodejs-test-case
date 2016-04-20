@@ -34,7 +34,7 @@ exports.createTransaction = function( req, res, next ) {
         }
 
         if ( user ) {
-            if (!user.stripe_customer_id.trim().length || req.body.token) {
+            if (!user.stripe_customer_id || !user.stripe_customer_id.trim().length || req.body.token) {
                 return Stripe.customers.create({
                     source: req.body.token,
                     description: user.name
