@@ -13,10 +13,12 @@
     <!-- Style CSS -->
     <!--<link href="/stylessheets/style.css" media="screen" rel="stylesheet">-->
     <!--<link href="/stylessheets/main.css" media="screen" rel="stylesheet" type="text/css">-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <!-- General Scripts -->
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-    <script src="/javascripts/jlib/query.js"></script>
+    <script src="/javascripts/lib/jquery.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="/javascripts/main.js"></script>
 </head>
 
@@ -26,6 +28,12 @@
     <div class="container">
         <%- body%>
     </div>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $('#tabs')[0] && $('#tabs').tab();
+        });
+    </script>
     <!--/ container -->
 </div>
 </body>

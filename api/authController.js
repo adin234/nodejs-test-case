@@ -4,7 +4,7 @@ var User = require( '../models/user.model.js' );
 var jwt = require( 'jsonwebtoken' );
 var config = require( '../config' );
 
-exports.index = function( req, res ) {
+exports.index = function( req, res, next ) {
 
     // find the user
     User.findOne( {
@@ -12,7 +12,7 @@ exports.index = function( req, res ) {
     }, function( err, user ) {
 
         if ( err ) {
-            throw err;
+            return res.status(500).json({success: false, message:err});
         }
 
         if ( !user ) {
@@ -24,7 +24,7 @@ exports.index = function( req, res ) {
         else if ( user ) {
             user.comparePassword( req.body.password, function( err, isMatch ) {
                 if ( err ) {
-                    throw err;
+                    return res.status(500).json({success: false, message:err});
                 }
 
                 if(!isMatch) {
@@ -60,7 +60,7 @@ exports.register = function( req, res ) {
     }, function( err, user ) {
 
         if ( err ) {
-            throw err;
+            return res.status(500).json({success: false, message:err});
         }
 
         if ( user ) {

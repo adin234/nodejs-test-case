@@ -1,19 +1,39 @@
-<form action="/authenticate" method="POST">
-    <h1>Login to test page</h1>
-    <label for="name">Name: </label>
-    <input type="text" name="name" id="name">
-    <br>
-    <label for="password">Password: </label>
-    <input type="password" name="password" id="password">
-    <input type="submit" value="Login">
-</form>
+<ul class="nav nav-tabs" id="tabs" data-tabs="tabs">
+    <li class="active"><a data-toggle="tab" href="#login">Login</a></li>
+    <li ><a data-toggle="tab" href="#register">Register</a></li>
+</ul>
 
-<form action="/register" method="POST">
-    <h1>Register to test page</h1>
-    <label for="name">Name: </label>
-    <input type="text" name="name" id="name">
-    <br>
-    <label for="password">Password: </label>
-    <input type="password" name="password" id="password">
-    <input type="submit" value="Register">
-</form>
+<div id="my-tab-content" class="tab-content clearfix">
+    <div class="tab-pane active" id="login">
+        <form action="/authenticate" method="POST">
+            <h1>Login to test page</h1>
+            <fieldset class="form-group">
+                <label for="name">Name: </label>
+                <input type="text" class="form-control" name="name" id="name">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="password">Password: </label>
+                <input type="password" class="form-control" name="password" id="password">
+            </fieldset>
+            <div class="clearfix">
+                <input class="btn btn-primary pull-right" type="submit" value="Login">
+            </div>
+        </form>
+    </div>
+    <div class="tab-pane" id="register">
+        <form action="/register" method="POST">
+            <h1>Register to test page</h1>
+            <fieldset class="form-group">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" class="form-control">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="password">Password: </label>
+                <input type="password" class="form-control" name="password" id="password">
+            </fieldset>
+            <div class="clearfix">
+                <input class="btn btn-primary pull-right" type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</div>

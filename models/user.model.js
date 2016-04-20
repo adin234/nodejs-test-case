@@ -8,7 +8,8 @@ var apiError = require('../api/api-error');
 
 var userSchema = mongoose.Schema( {
     name: String,
-    password: String
+    password: String,
+    stripe_customer_id: String
 } );
 
 
